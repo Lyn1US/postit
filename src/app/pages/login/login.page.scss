@@ -1,0 +1,80 @@
+.background {
+    height: 40vh;
+    object-fit: cover; 
+}
+
+.detail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transform: translateY(-20px);
+    opacity: 0.3;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #FFF;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    height: 70vh;
+    transform: translateY(-30px);
+
+    
+
+    img {
+        width: 21%;
+        object-fit: contain;    
+        height: 30%;
+    }
+
+   
+
+    &--inputs {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        color: black;
+
+        span {
+            color: #707070;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        input {
+            margin-bottom: 2rem;
+            border: 1px solid #DBDBDB;
+            background-color: transparent;
+            outline: 0px;
+            border-radius: 20px;
+            padding: 1rem;
+        }
+    }
+
+    ion-button {
+        --border-radius: 20px;
+        --background: #2D9FDB;
+        font-style: italic;
+        font-size: 0.8rem;
+        width: 60%;
+        height: 3rem;
+        margin-top: 2rem;
+        --box-shadow: none;
+    }
+
+    p {
+        color: #707070;
+        
+        a {
+            color: #2D9FDB;
+            text-decoration: none;
+        }
+    }
+}
+
