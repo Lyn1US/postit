@@ -7,17 +7,17 @@
     <img src="assets/imgs/noteit.png">
 
     <div class="container--inputs">
-      
+
       <span>Email</span>
-      <input type="text"/>
+      <input type="text" [(ngModel)]="loginPayload.email"/>
       <span>Senha</span>
-      <input type="password"/>
+      <input type="password" [(ngModel)]="loginPayload.password"/>
 
 
     </div>
 
     
-    <ion-button>Confirmar</ion-button>
+    <ion-button (click)="login()">Confirmar</ion-button>
 
     <p>Não possui conta? <a href="">Cadastre-se!</a></p>
 
