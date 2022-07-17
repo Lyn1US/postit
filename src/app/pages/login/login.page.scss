@@ -25,9 +25,8 @@
     height: 75vh;
     transform: translateY(-30px);
 
-    img {
+    app-logo {
         width: 21%;
-        object-fit: contain;    
         height: 30%;
 
         @media screen and (min-width: 1000px){
