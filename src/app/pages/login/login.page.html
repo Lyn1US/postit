@@ -8,17 +8,20 @@
 
     <div class="container--inputs">
 
-      <span>Email</span>
+      <span>E-mail</span>
       <input type="text" [(ngModel)]="loginPayload.email"/>
       <span>Senha</span>
       <input type="password" [(ngModel)]="loginPayload.password"/>
 
-
     </div>
 
     
-    <ion-button (click)="login()">Confirmar</ion-button>
-
+    <ion-button [class.disabled]="!canLogin()" class="disabled" (click)="login()">
+      {{ isLoading ? 'carregando...' : 'confirmar' }}
+      <app-spring-spinner *ngIf="isLoading" [animationDuration]="1000" [size]="20" [color]="'#FFF'"></app-spring-spinner>
+    </ion-button>
+    
+    
     <p>Não possui conta? <a href="">Cadastre-se!</a></p>
 
   </div>

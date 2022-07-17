@@ -1,6 +1,7 @@
 .background {
     height: 40vh;
     object-fit: cover; 
+    width: 100%;
 }
 
 .detail {
@@ -21,24 +22,27 @@
     background-color: #FFF;
     border-top-left-radius: 28px;
     border-top-right-radius: 28px;
-    height: 70vh;
+    height: 75vh;
     transform: translateY(-30px);
-
-    
 
     img {
         width: 21%;
         object-fit: contain;    
         height: 30%;
-    }
 
-   
+        @media screen and (min-width: 1000px){
+            width: 10%;
+
+        }
+    }
 
     &--inputs {
         display: flex;
         flex-direction: column;
         width: 80%;
         color: black;
+        /*background-color: black;*/
+        padding: 0.2rem;
 
         span {
             color: #707070;
@@ -48,12 +52,12 @@
             margin-bottom: 10px;
         }
         input {
-            margin-bottom: 2rem;
+            margin-bottom: .7rem;
             border: 1px solid #DBDBDB;
             background-color: transparent;
             outline: 0px;
-            border-radius: 20px;
-            padding: 1rem;
+            border-radius: 15px;
+            padding: 0.7rem;
         }
     }
 
@@ -61,10 +65,10 @@
         --border-radius: 20px;
         --background: #2D9FDB;
         font-style: italic;
-        font-size: 0.8rem;
+        font-size: .8rem;
         width: 60%;
-        height: 3rem;
-        margin-top: 2rem;
+        height: 2.7rem;
+        margin-top: 1.2rem;
         --box-shadow: none;
     }
 
@@ -78,3 +82,12 @@
     }
 }
 
+.disabled {
+    opacity: .5;
+    pointer-events: none;
+
+}
+
+app-spring-spinner {
+    margin-left: 15px;
+}
