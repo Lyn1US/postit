@@ -13,12 +13,12 @@ const routes: Routes = [
   },
   
   {
-    path: 'feed',
-    loadChildren: () => import('./pages/main/feed/feed.module').then( m => m.FeedPageModule)
-  },
-  {
     path: 'home',
     loadChildren: () => import('./pages/main/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'feed',
+    loadChildren: () => import('./pages/main/feed/feed.module').then( m => m.FeedPageModule)
   },
   {
     path: 'profile',

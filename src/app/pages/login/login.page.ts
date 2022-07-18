@@ -1,5 +1,5 @@
 import { Component, } from '@angular/core';
-import { AlertController, ToastController } from '@ionic/angular';
+import { Animation, AnimationController } from '@ionic/angular';
 import { LoginPayload } from 'src/app/models/payload/loginPayload';
 import { HelperService } from 'src/app/services/helper.service';
 @Component({
@@ -10,9 +10,11 @@ import { HelperService } from 'src/app/services/helper.service';
 export class LoginPage  {
 
   constructor(
-    private readonly helper: HelperService,
-    
-    ) { }
+      private readonly helper: HelperService,
+      private animationController: AnimationController,
+    ){ 
+      
+    }
 
   public loginPayload: LoginPayload = {
     email: '',
@@ -62,4 +64,18 @@ export class LoginPage  {
     console.log($event)
   }
 
+  public isRegisterActive: boolean = false;
+
+  public goToRegister(): void {
+    this.isRegisterActive = true;
+  
+  }
+
+  public backToLogin(): void {
+    this.isRegisterActive = false;
+  }
+
+  public returnCurrentState() {
+    return this.isRegisterActive;
+  }
 }

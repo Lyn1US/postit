@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, NavigationStart, Router, } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
@@ -11,14 +11,17 @@ import { filter } from 'rxjs/operators';
 })
 export class AppComponent implements OnDestroy{
   constructor(
-    private readonly router: Router,
+    private readonly router: Router
+
   ) {
-    router.events
+    //
+    this.routeSubscription = router.events
     .pipe(filter(event => event instanceof NavigationEnd))
     .subscribe((route: NavigationEnd)=> {
       console.log(route.url);
+
       if(!this.routesWithoutNavbar.includes(route.url)){
-        this.canShowNavbar = true
+        this.canShowNavbar = true;
       }
       else {
         this.canShowNavbar = false;
@@ -28,7 +31,7 @@ export class AppComponent implements OnDestroy{
   }
 
   public canShowNavbar: boolean = false;
-  public routesWithoutNavbar: string[] = ['/login'];
+  public routesWithoutNavbar: string[] = ['/login', '/'];
 
   public routeSubscription: Subscription;
 
