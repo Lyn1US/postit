@@ -1,20 +1,24 @@
-import { Component, } from '@angular/core';
-import { Animation, AnimationController } from '@ionic/angular';
+import { Component,} from '@angular/core';
 import { LoginPayload } from 'src/app/models/payload/loginPayload';
 import { HelperService } from 'src/app/services/helper.service';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  styleUrls: ['./login.page.scss' ],
 })
 export class LoginPage  {
 
+  //[class.register-container]="returnCurrentState()"
+
+  // *ngIf="!isRegisterActive"
+
   constructor(
       private readonly helper: HelperService,
-      private animationController: AnimationController,
-    ){ 
       
-    }
+      
+    ){  }
 
   public loginPayload: LoginPayload = {
     email: '',
@@ -64,18 +68,4 @@ export class LoginPage  {
     console.log($event)
   }
 
-  public isRegisterActive: boolean = false;
-
-  public goToRegister(): void {
-    this.isRegisterActive = true;
-  
-  }
-
-  public backToLogin(): void {
-    this.isRegisterActive = false;
-  }
-
-  public returnCurrentState() {
-    return this.isRegisterActive;
-  }
 }

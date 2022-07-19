@@ -1,5 +1,5 @@
-import { Component, OnDestroy } from '@angular/core';
-import { NavigationEnd, NavigationStart, Router, } from '@angular/router';
+import { Component, OnDestroy, } from '@angular/core';
+import { NavigationEnd, Router, } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
@@ -8,6 +8,7 @@ import { filter } from 'rxjs/operators';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
+  
 })
 export class AppComponent implements OnDestroy{
   constructor(

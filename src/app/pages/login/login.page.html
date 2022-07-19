@@ -1,69 +1,27 @@
 <div class="login">
 
   <img class="background" src="assets/imgs/postit.png">
-  
 
   <img class="detail" src="assets/imgs/background.png">
 
-  
+    <div class="login-container">
+      <app-logo src="assets/imgs/noteit.png" [full]="false" (onClick)="logoClick($event)"></app-logo>
+      <div class="login-container--inputs">
 
-    <div *ngIf="!isRegisterActive" class="login-container" [class.register-container]="returnCurrentState()">
+        <span>E-mail</span>
+        <input  (keydown.enter)="password.focus()" class="input" type="text" [(ngModel)]="loginPayload.email"/>
+        <span>Senha</span>
+        <input #password (keydown.enter)="login()" class="input" type="password" [(ngModel)]="loginPayload.password"/>
+
+      </div>
     
-    <app-logo src="assets/imgs/noteit.png" [full]="false" (onClick)="logoClick($event)"></app-logo>
-    <div class="login-container--inputs">
-
-      <span>E-mail</span>
-      <input  (keydown.enter)="password.focus()" class="input" type="text" [(ngModel)]="loginPayload.email"/>
-      <span>Senha</span>
-      <input #password (keydown.enter)="login()" class="input" type="password" [(ngModel)]="loginPayload.password"/>
-
+      <ion-button class="button" [class.disabled]="!canLogin()" class="disabled" (click)="login()">
+        {{ isLoading ? 'carregando...' : 'confirmar' }}
+        <app-spring-spinner *ngIf="isLoading" [animationDuration]="1000" [size]="20" [color]="'#FFF'"></app-spring-spinner>
+      </ion-button>
+    
+      <p>Não possui conta? <a>Cadastre-se!</a></p>
     </div>
-
-    
-    <ion-button class="button" [class.disabled]="!canLogin()" class="disabled" (click)="login()">
-      {{ isLoading ? 'carregando...' : 'confirmar' }}
-      <app-spring-spinner *ngIf="isLoading" [animationDuration]="1000" [size]="20" [color]="'#FFF'"></app-spring-spinner>
-    </ion-button>
-    
-    
-    <p>Não possui conta? <a (click)="goToRegister()">Cadastre-se!</a></p>
-    
-
-  </div>
-
-  <div *ngIf="isRegisterActive" class="register-container login-container" [class.register-container]="returnCurrentState()">
-    <app-logo src="assets/imgs/noteit.png" [full]="false" (onClick)="logoClick($event)"></app-logo>
-
-    <div class="register-container--inputs">
-
-      <span>Nome Completo*</span>
-      <input class="input" type="text"/>
-
-      <span>E-mail*</span>
-      <input class="input" type="text"/>
-      <span>Confirme o E-mail*</span>
-      <input class="input" type="text"/>
-      
-      <span>Senha*</span>
-      <input #password  class="input" type="password"/>
-      <span>Confirme a Senha*</span>
-      <input #password  class="input" type="password"/>
-
-    </div>
-
-      
-    <ion-button class="button" class="disabled">
-      {{ isLoading ? 'carregando...' : 'criar conta' }}
-      <app-spring-spinner *ngIf="isLoading" [animationDuration]="1000" [size]="20" [color]="'#FFF'"></app-spring-spinner>
-    </ion-button>
-      
-      
-    <p>*Campos obrigatórios</p>
-    <a (click)="backToLogin()">VOLTAR</a>
-  </div>
-
-  
-
 </div>
 
 

@@ -1,0 +1,53 @@
+.login-container:hover {
+    transition-property: all;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #FFF;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    height: 150vh;
+    transform: translateY(-300px);
+
+    app-logo {
+
+        width: 15vw;
+        height: 5vh;
+        margin-top: 1rem;
+
+        @media screen and (min-width: 1000px){
+            width: 10%;
+
+        }
+
+        //background-color: green;
+    }
+
+    &--inputs {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        color: black;
+        /*background-color: black;*/
+        padding: 0.2rem;
+
+        span {
+            color: #707070;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+    }
+
+    p {
+        color: #707070;
+        
+        a {
+            color: #2D9FDB;
+            text-decoration: none;
+        }
+    }
+}

@@ -14,15 +14,15 @@
     opacity: 0.3;
 }
 
-
-
-    /* LOGIN */
+/* LOGIN */
 
 .login-container {
     transition: 0.5;
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    color: black;
 
     background-color: #FFF;
     border-top-left-radius: 28px;
@@ -40,8 +40,8 @@
 
         }
     }
-
-    &--inputs {
+    //&--inputs
+    .login-container--inputs {
         display: flex;
         flex-direction: column;
         width: 80%;
@@ -68,14 +68,13 @@
             
         }
     }
-
-   
+    
 }
+
 /* REGISTRO */
 
 .register-container {
-    transition: .5s;
-
+    transition-property: all;
     display: flex;
     flex-direction: column;
     align-items: center;
