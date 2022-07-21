@@ -17,7 +17,7 @@
 /* LOGIN */
 
 .login-container {
-    transition: 0.5;
+    transition: .3s;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,12 +61,31 @@
 
     p {
         color: #707070;
-        
+        text-align: center;
         a {
             color: #2D9FDB;
             text-decoration: none;
             
         }
+    }
+
+    ion-button {
+        align-self: center;
+        width: 326px;
+        height: 56px;
+    }
+
+    .back {
+        width: 25px;
+        height: 32px;
+        //background-color: red;
+        background-image: url('../../../assets/imgs/backicon.png');
+        background-repeat: no-repeat;
+        align-items: center;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        
     }
     
 }
@@ -74,10 +93,10 @@
 /* REGISTRO */
 
 .register-container {
-    transition-property: all;
+    transition: 1s;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
 
     background-color: #FFF;
     border-top-left-radius: 28px;
@@ -87,9 +106,12 @@
 
     app-logo {
 
-        width: 15vw;
-        height: 5vh;
+        position: absolute;
+        width: 10vw;
+        height: 4vh;
         margin-top: 1rem;
+        left: 45px;
+        margin-bottom: 20px;
 
         @media screen and (min-width: 1000px){
             width: 10%;
@@ -100,35 +122,56 @@
     }
 
     &--inputs {
+        
         display: flex;
         flex-direction: column;
         width: 80%;
         color: black;
         /*background-color: black;*/
-        padding: 0.2rem;
+        padding: 25px;  
+        
 
         span {
             color: #707070;
             font-weight: bold;
             letter-spacing: 2px;
             font-style: italic;
-            margin-bottom: 10px;
+            margin-top: 3.2rem;
+            margin-bottom: 0px;
+        }
+
+        input {
+            height: 42px;
+            width: 326px;
+            border-radius: 50px;
+            align-self: center;
+            text-align: center;
+
+        }
+
+        p {
+            color: #707070;
+            
+            /*a {
+                color: #2D9FDB;
+                text-decoration: none;
+                
+            }*/
         }
         
     }
 
-    p {
-        color: #707070;
-        
-        a {
-            color: #2D9FDB;
-            text-decoration: none;
-        }
+    ion-button {
+        width: 326px;
+        height: 56px;
+        align-self: center;
     }
+
 }
 
 /* BOTAO */
 .disabled {
+    
     opacity: .5;
     pointer-events: none;
 
@@ -137,3 +180,4 @@
 app-spring-spinner {
     margin-left: 15px;
 }
+

@@ -68,4 +68,25 @@ export class LoginPage  {
     console.log($event)
   }
 
+  //
+
+  public registring: boolean = false;
+
+  public goToRegister(): void {
+
+    this.registring = true;
+
+  } 
+
+  public backToLogin(): void {
+    this.registring = false;
+  }
+
+  public isRegistring(): boolean {
+
+    if (this.registring == true) return true;
+
+    return false;
+  }
+
 }
