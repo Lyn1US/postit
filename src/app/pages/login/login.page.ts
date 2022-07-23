@@ -1,4 +1,5 @@
 import { Component,} from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginPayload } from 'src/app/models/payload/loginPayload';
 import { HelperService } from 'src/app/services/helper.service';
 
@@ -16,13 +17,21 @@ export class LoginPage  {
 
   constructor(
       private readonly helper: HelperService,
-      
+      private readonly router: Router,
       
     ){  }
 
   public loginPayload: LoginPayload = {
     email: '',
     password: '',
+  }
+
+  public registerPayload = {
+    name: '',
+    email: '',
+    confirmEmail: '',
+    password: '',
+    confirmPassword: '',
   }
 
   public isLoading: boolean = false;
@@ -49,8 +58,9 @@ export class LoginPage  {
       }
       ]);
      
-
     //console.log(this.loginPayload);
+
+    await this.router.navigate(['/home']);
   }
 
   public canLogin(): boolean {
