@@ -76,11 +76,11 @@ export class HomePage  {
 
     await modal.present();
 
-    modal.onDidDismiss().then(async ({ data: postIt }) => {
-      // let index = this.postItArray.findIndex(post => post.id == postIt.id);
-      // this.postItArray[index] = postIt;
-      console.log('postIt', postIt);
-      console.log('postItArray', this.postItArray);
+    modal.onDidDismiss().then(async ({ data }) => {
+      console.log(data);
+      if (data.isDeleted) {
+        this.postItArray = this.postItArray.filter(post => post.id !== data.postit.id);
+      }
     });
   }
   
@@ -89,7 +89,8 @@ export class HomePage  {
       component: PostitModalComponent,
       cssClass:'background-modal',
       componentProps: {
-        color
+        color,
+        create: true,
       }
 
     })
@@ -97,12 +98,11 @@ export class HomePage  {
     await modal.present();
 
     modal.onDidDismiss().then(async ({ data: postIt }) => {
-      
-      if(postIt) {
+      if (postIt) {
         this.postItArray.push(postIt);
       }
-
     });
   }
-
 }
+
+
