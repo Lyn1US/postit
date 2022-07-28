@@ -1,16 +1,16 @@
 <div class="feed-detail">
-  <img class="detail" src="assets/imgs/background.svg">
+  <img class="detail" src="assets/imgs/background.png">
 
   <header>
-    <img class="go-back" src="assets/imgs/go-back.svg">
-    <img class="noteAndFriends" src="assets/imgs/note_and_friends.svg">
+    <img class="go-back" src="assets/imgs/go-back.svg" [routerLink]="['/feed']">
+    <img class="noteAndFriends" src="assets/imgs/noteitfriends.png">
   </header>
 
   <main>
     <div class="feed-item" [style.background-color]="postIt.color">
       <header>
         <ion-avatar class="user--avatar">
-          <img src="assets/imgs/user/user-example-1.jpg" />
+          <img src="assets/imgs/users/user-example-1.jpg" />
         </ion-avatar>
         <div class="user--info">
           <span class="user--info--name">

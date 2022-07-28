@@ -16,8 +16,7 @@ export class FeedDetailPage implements OnInit {
     this.postItId = +this.activatedRoute.snapshot.params.id;
   }
 
-  ngOnInit() {
-  }
+ 
 
   public postItArray: PostItProxy[] = [
     {
@@ -76,6 +75,11 @@ export class FeedDetailPage implements OnInit {
   private postItId: number = 0;
   
   public isLiked: boolean = false;
+
+  public ngOnInit(): void {
+  
+    this.getPostIt();
+  }
 
   public getPostIt(): void {
     this.postIt = this.postItArray.find(post => post.id === this.postItId);

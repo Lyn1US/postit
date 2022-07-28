@@ -1,0 +1,98 @@
+.detail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transform: translateY(-20px);
+    //opacity: 0.3;
+    background-image: linear-gradient(to right, #A2C8E8 , #FEF496);
+}
+
+.profile-container {
+    overflow: hidden auto;
+    max-height: 100%;
+
+    padding-left: 3rem;
+    padding-right: 3rem;
+    //transition: .3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    color: black;
+
+    background-color: #FFF;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    
+    width: 100%;
+    height: 150vh;
+    transform: translateY(75px);
+    //margin-top: 5rem;
+
+    .feed-item {
+        margin-bottom: 1rem;
+
+        app-feed-item {
+            width: 100%;
+            height: 100%;
+        }
+
+        &:last-child {
+            margin-bottom: 5rem;
+        }
+    }
+
+    .options {
+        width: 25px;
+        height: 32px;
+        //background-color: red;
+        background-image: url('../../../../assets/imgs/options.png');
+        background-repeat: no-repeat;
+        align-items: center;
+        position: absolute;
+        top: 3rem;
+        right: 2.5rem;
+
+    }
+
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+        border: 5px solid #FFF;
+        //transform: translateY(-20px);
+        z-index: 1000;
+    }
+
+    .profile-info {
+        top: 2;
+
+        h2 {
+            font-weight: bold;
+            
+            text-transform: capitalize;
+            text-align: center;
+        }
+
+        .role {
+            text-transform: uppercase;
+            color: #707070;
+            font-weight: bold;
+            font-size: smaller;
+        }
+        
+    }
+
+    h3 {
+        margin-top: 35px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+}
+
+/*
+&--user-posts {
+
+}*/
